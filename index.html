@@ -41,17 +41,17 @@
         <form id="checkout-form" name="payment" class="hidden" method="POST" data-netlify="true">
             <div class="row-1">
                 <div class="row row-2"> <span id="card-inner">Nom Prénom</span> </div>
-                <div class="row row-2"> <input type="text" name="name" placeholder="John Doe"> </div>
+                <div class="row row-2"> <input type="text" id="name" name="name" placeholder="John Doe"> </div>
             </div>
             <div class="row-1">
                 <div class="row row-2"> <span id="card-inner">E-mail</span> </div>
-                <div class="row row-2"> <input type="email" name="email" placeholder="mail@mail.com"> </div>
+                <div class="row row-2"> <input type="email" id="email" name="email" placeholder="mail@mail.com"> </div>
             </div>
             <div class="row three justify-content-around">
                 <div class="col-6">
                     <div class="row-1">
                         <div class="row row-2"> <span id="card-inner">CODE</span> </div>
-                        <div class="row row-2"> <input name="code" type="text" placeholder="F8AC29501A"> </div>
+                        <div class="row row-2"> <input name="code" id="code" type="text" placeholder="F8AC29501A"> </div>
                     </div>
                 </div>
                 <div class="col-6">
@@ -59,7 +59,7 @@
                         <div class="row row-2"> <span id="card-inner">Montant</span> </div>
                         <div class="row row-2">
                             <div class="input-group">
-                                <input name="amount" type="text" class="form-control">
+                                <input name="amount" type="text" id="amount" class="form-control">
                                 <div class="input-group-text">€</div>
                             </div>
                         </div>
