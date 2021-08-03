@@ -32,10 +32,12 @@ form.addEventListener("submit", function (e) {
   fetch(
     "https://api.mailgun.net/v3/sandbox3a2fdd790ff34960bcd4e08b6e217fd0.mailgun.org/messages",
     {
-      method : "POST",
-      body : body,
+      method: "POST",
+      body: body,
       headers: {
-        Authorization: "64574a68 - d20692a6"
+        "X-API-KEY": "64574a68-d20692a6",
+        'Accept': "application/json",
+        "Content-Type": "application/json",
       },
     }
   );
