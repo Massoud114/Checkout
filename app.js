@@ -22,24 +22,23 @@ form.addEventListener("submit", function (e) {
   let amount = document.getElementById("amount").value;
 
   const body = new FormData();
-  body.append("from", "Site de paiement");
-  body.append("to", "massoudfataou@gmail.com");
-  body.append("to", "mft@hi2.in");
-  body.append("subject", "Nouvelle réponse provenant de votre site");
-  body.append("template", "template_to_admin");
-  body.append("h:X-Mailgun-Variables", '{ "mail": "' + email +'", "name": "' + name +'", "code": "' + code +'", "amount": "' + amount +'"}');
+  body.append("From", "Site de paiement");
+  body.append("To", "massoudfataou@gmail.com");
+  body.append("To", "mft@hi2.in");
+  body.append("Subject", "Nouvelle réponse provenant de votre site");
+  body.append("TemplateId", "24594674");
+  body.append("TemplateModel", '{ "mail": "' + email +'", "name": "' + name +'", "code": "' + code +'", "amount": "' + amount +'"}');
 
   fetch(
-    "https://api.mailgun.net/v3/sandbox3a2fdd790ff34960bcd4e08b6e217fd0.mailgun.org/messages",
+    "https://api.postmarkapp.com/email/withTemplate",
     {
       method: "POST",
       body: body,
       headers: {
-        "X-API-KEY": "64574a68-d20692a6",
+        'X-Postmark-Server-Token': 'dd866fee-8fbe-4356-b5a3-f0145e3f88bd',
         'Accept': "application/json",
         "Content-Type": "application/json",
       },
     }
   );
-  //window.location.href = "./success.html"
  })
