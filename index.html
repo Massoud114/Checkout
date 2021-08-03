@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Payment</title>
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='style.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body class='snippet-body'>
+    <div class="card mt-50 mb-50">
+        <div class="card-title mx-auto"> Paiement </div>
+        <div class="nav">
+            <ul class="mx-auto">
+                <li id="payment-choice-title" class="active">Méthodes</li>
+                <li id="payment-title" class="">Paiement</li>
+            </ul>
+        </div>
+
+        <div id="payment-choice" class="row payment-list justify-content-between">
+            <div class="payment-method col-md-5 pb-4" id="dds">
+                <img class="img-fluid p-2" src="images/pcs.png"/>
+            </div>
+            <div class="payment-method col-md-5 pb-4">
+                <img class="img-fluid p-2" src="images/transcash.jpg"/>
+            </div>
+            <div class="payment-method col-md-5 pb-4">
+                <img class="img-fluid p-2" src="https://logovectorseek.com/wp-content/uploads/2021/04/neosurf-logo-vector.png"/>
+            </div>
+            <div class="payment-method col-md-5 pb-4">
+                <img class="img-fluid p-2" src="images/apple.svg"/>
+            </div>
+            <div class="payment-method col-md-5 pb-4">
+                <img class="img-fluid p-2" src="images/play.svg"/>
+            </div>
+        </div>
+
+        <form id="checkout-form" class="hidden">
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">Nom Prénom</span> </div>
+                <div class="row row-2"> <input type="text" placeholder="John Doe"> </div>
+            </div>
+            <div class="row-1">
+                <div class="row row-2"> <span id="card-inner">E-mail</span> </div>
+                <div class="row row-2"> <input type="email" placeholder="mail@mail.com"> </div>
+            </div>
+            <div class="row three justify-content-around">
+                <div class="col-6">
+                    <div class="row-1">
+                        <div class="row row-2"> <span id="card-inner">CODE</span> </div>
+                        <div class="row row-2"> <input type="text" placeholder="F8AC29501A"> </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row-1">
+                        <div class="row row-2"> <span id="card-inner">Montant</span> </div>
+                        <div class="row row-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                                <div class="input-group-text">€</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Vérifier" class="btn d-flex mx-auto">
+        </form>
+    </div>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'>
+    </script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
